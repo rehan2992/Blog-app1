@@ -3,6 +3,20 @@ import {Editor } from '@tinymce/tinymce-react';
 import {Controller } from 'react-hook-form';
 
 
+// Required TinyMCE core + theme
+import 'tinymce/tinymce';
+import 'tinymce/themes/silver/theme';
+import 'tinymce/icons/default/icons';
+
+// Optional: Import the plugins you use
+import 'tinymce/plugins/link';
+import 'tinymce/plugins/table';
+import 'tinymce/plugins/lists';
+import 'tinymce/plugins/code';
+import 'tinymce/skins/ui/oxide/skin.min.css';
+
+
+
 export default function RTE({name, control, label, defaultValue =""}) {
   return (
     <div className='w-full'> 
@@ -13,7 +27,7 @@ export default function RTE({name, control, label, defaultValue =""}) {
     control={control}
     render={({field: {onChange}}) => (
         <Editor
-        apiKey="haoyuybdegqjbjommp4hrxw2iah8qiu69aayrwe1b7ocwvlk"
+        // apiKey="haoyuybdegqjbjommp4hrxw2iah8qiu69aayrwe1b7ocwvlk"
         initialValue={defaultValue}
         init={{
             initialValue: defaultValue,
